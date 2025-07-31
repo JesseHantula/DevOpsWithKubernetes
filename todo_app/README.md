@@ -1,5 +1,3 @@
-## Log output app
-
-Outputs a string every 5 seconds with a timestamp.
+## Todo app
 
 Deploy with `kubectl apply -f manifests/`
