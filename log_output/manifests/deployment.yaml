@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: log-output
+  name: log-output-dep
 spec:
   replicas: 1
   selector:
@@ -12,7 +12,19 @@ spec:
       labels:
         app: log-output
     spec:
+      volumes:
+        - name: shared-logs
+          emptyDir: {}
       containers:
-        - name: log-output
-          image: jessehantula/log-output:1.2
-          imagePullPolicy: Always
+        - name: writer
+          image: jessehantula/log-output-writer:1.1
+          volumeMounts:
+            - mountPath: /usr/src/app/files/
+              name: shared-logs
+        - name: reader
+          image: jessehantula/log-output-reader:1.1
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - mountPath: /usr/src/app/files/
+              name: shared-logs
