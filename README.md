@@ -15,3 +15,5 @@ Repository for the University of Helsinki course DevOps with Kubernetes.
 [1.4](https://github.com/JesseHantula/DevOpsWithKubernetes/tree/1.4)
 
 [1.5](https://github.com/JesseHantula/DevOpsWithKubernetes/tree/1.5)
+
+[1.6](https://github.com/JesseHantula/DevOpsWithKubernetes/tree/1.6)
