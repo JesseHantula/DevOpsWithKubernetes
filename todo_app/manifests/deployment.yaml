@@ -17,4 +17,4 @@ spec:
           image: jessehantula/todo-app:1.2
           env:
             - name: PORT
-              value: "8080"
+              value: "3000"
